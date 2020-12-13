@@ -1,32 +1,29 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <!-- <AppBar/> -->
+
+    <v-main>
+      <div style="max-width: 600px" class="mx-auto">
+        <router-view></router-view>
+      </div>
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// import HelloWorld from './components/HelloWorld'
+// // import AppBar from './components/AppBar'
 
-#nav {
-  padding: 30px;
+export default {
+  name: "App",
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  components: {
+    // HelloWorld,
+    // AppBar
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
