@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-card class="text-center">
-      <v-card-text class="title">
+      <v-card-text class="header">
         <!-- <v-row no-gutters>
          
           <v-col cols="3"> -->
@@ -43,14 +43,15 @@
         ></v-text-field>
       </v-card-text>
     </v-card>
-    <v-card class="mt-2" max-height="200" style="overflow:auto">
-      <v-card-text>
-        <h3><v-icon color="success">mdi-history</v-icon>
+    <h3 class="mt-2"><v-icon color="success">mdi-history</v-icon>
           Answer List
           <v-btn class="d-none" color="error" v-if="trueAnswerList.length>0" @click="clearAnswerList" x-small icon>
           <v-icon>mdi-delete</v-icon>
           </v-btn>
           </h3>
+    <v-card class="mt-2" max-height="200" style="overflow:auto">
+      
+      <v-card-text>
         <v-list one-line>
           <v-list-item-group v-model="selected">
             <template v-for="(item, index) in trueAnswerList">
@@ -81,20 +82,20 @@
       </v-card-text>
     </v-card>
     </v-container>
-    <v-bottom-navigation v-model="value" absolute>
-      <v-btn value="recent">
+    <v-bottom-navigation height="13" v-model="value" absolute>
+      <v-btn small value="recent">
         <span>Recent</span>
 
         <v-icon>mdi-history</v-icon>
       </v-btn>
 
-      <v-btn value="favorites">
+      <v-btn small value="favorites">
         <span>Favorites</span>
 
         <v-icon>mdi-heart</v-icon>
       </v-btn>
 
-      <v-btn value="nearby">
+      <v-btn small value="nearby">
         <span>Nearby</span>
 
         <v-icon>mdi-map-marker</v-icon>
@@ -202,7 +203,7 @@ export default {
       this.answer = "";
     },
     newExpresion() {
-      let range = this.numberLength * 50;
+      let range = (this.numberLength+this.score) * 10;
       this.expresion =
         Math.floor(Math.random() * range) +
         " " +

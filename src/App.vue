@@ -25,5 +25,25 @@ export default {
   data: () => ({
     //
   }),
+  mounted() {
+    // if ("serviceWorker" in navigator) {
+    //   navigator.serviceWorker
+    //     .register("./registerServiceWorker.js", { scope: "." })
+    //     .then((result) => {
+    //       console.log('Service worker registerd!',result);
+    //     })
+    //     .catch((err) => {
+    //       console.log('service worker registerd has Error', err);
+    //     });
+    // }
+    // window.addEventListener("beforeinstallprompt", function (event) {
+    //   console.log('beforeinstallprompt fired', event);
+    //   event.preventDefault();
+    //   let deferredPrompt = event;
+    //   console.log('beforeinstallprompt fired - deferredPrompt', deferredPrompt);
+
+    //   return false;
+    // });
+  },
 };
 </script>
